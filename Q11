@@ -1,0 +1,15 @@
+package Questions;
+
+//import Questions.Q11AccessFromPackage.Variables.*;
+
+public class Q11 
+{
+
+    public static void main(String[] args) 
+    {
+        Variables numbers = new Variables();
+
+        System.out.println("Float one: "+ numbers.floatOne);
+        System.out.println("Float Two: "+ numbers.floatTwo);
+    }
+}
