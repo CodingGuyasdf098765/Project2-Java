@@ -1,0 +1,16 @@
+package Questions;
+
+public class Q10 
+{
+
+    public static void main(String[] args) 
+    {
+    	// Preliminary defintion of two arbitrary int values
+        int num1 = 18;
+        int num2 = 15;
+        
+        //Ternary operators. 
+        int minNum = (num1 < num2) ? num1 : num2;
+        System.out.println(minNum + " is the minimum value of the two numbers provided.");
+    }
+}
