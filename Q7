@@ -1,0 +1,102 @@
+package Questions;
+
+// Lots of imports. Still not totally sure of the purpose of these, something to do with accessing libraries/functionalities that we otherwise couldn't use. 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Q7 
+{
+	// Main method
+	public static void main(String[] args)
+	{
+		System.out.println("Hello World!");
+		
+		Employee employee1; 
+		Employee employee2; 
+		
+		//Compare();
+		
+	}
+	
+	// The keyword "implement" implies that we are dealing with an example of an inherited class structure. 
+	public class Employee implements Comparator<Employee> 
+	{
+		// Preliminary definition of variables
+		String name, department;
+		Integer age; 
+		
+		// This has to do with a "wrapper". Notice that the two arguments that are passed in here are instances of the Employee class. 
+		public int compare(Employee employee1, Employee employee2) 
+		{
+			if (employee1.name == employee2.name) 
+			{
+				// Sort on other attributes
+				if (employee1.department == employee2.department) 
+				{
+					// Sort by age
+					return employee1.age.compareTo(employee2.age);
+				} 
+				
+				else 
+				{
+					return employee1.department.compareTo(employee2.department);
+				}
+			} 
+			else 
+			{
+				return employee1.name.compareTo(employee2.name);
+			}
+		}
+		
+		// Definition of the toString() 
+		public String toString() 
+		{
+			return name + ", " + department + ", " + age + ".";
+		}
+	}
+
+	// The definition of the compare method 
+	public void Compare() 
+	{
+
+		// From lines 65 through 83, I define four new instances of the Employee class, each instance with its own name.
+		// Of course, these class instances represent real people, so we give placeholder names and attributes according to the question, such as department and age. 
+		Employee matt = new Employee();
+		matt.name = "Matt";
+		matt.department = "HR";
+		matt.age = 40;
+
+		Employee eric = new Employee();
+		eric.name = "Eric";
+		eric.department = "Sales";
+		eric.age = 40;
+
+		Employee john = new Employee();
+		john.name = "John";
+		john.department = "HR";
+		john.age = 30;
+
+		Employee tim = new Employee();
+		tim.name = "Tim";
+		tim.department = "Sales";
+		tim.age = 70;
+
+		// This is a List of Employeee objects. 
+		List<Employee> employees = new ArrayList<Employee>();
+		employees.add(matt); 
+		employees.add(eric); 
+		employees.add(john); 
+		employees.add(tim);
+
+		// Collections.sort takes two arguments: the list to sort, and an instance of a comparator that can compare the objects in the list
+		// In my case, the objects in the list were all also comparators. 
+		Collections.sort(employees, new Employee());
+ 
+		// for loop that 
+		for (int k = 0; k < employees.size(); ++k) {
+			System.out.println(employees.get(k).toString());
+		}
+	}
+}
