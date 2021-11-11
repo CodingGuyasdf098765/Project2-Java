@@ -1,0 +1,32 @@
+package Questions;
+
+// Gotta import the scanner or else this won't work. I'm not totally sure what it does exactly, other than it makes this code block function properly. 
+import java.util.Scanner;
+
+public class Q3
+{
+	// Definition of the main method
+	public static void main(String[] args)
+	{
+		//Prompt the User for input
+		System.out.println("Enter string to reverse:");
+		
+		//User inputs the string that they want to reverse
+		Scanner read = new Scanner(System.in);
+		String str = read.nextLine();
+		
+		// the mirror string is initially empty, but we add to that definition in the subsuquent for loop. Stay tuned!
+		// Additionally, I'm unsure if mirror is acting as a "temporary variable", as it changes in time but I think that the question refers to something else entirely so I'm gonna go ahead with this. 
+		String mirror = "";
+ 
+		// For loop. Probably could've used a while loop, but whatever. 
+		for(int i = str.length() - 1; i >= 0; i--)
+		{
+			//Increment the mirrored string with the "i-th" character in the original string
+			mirror += str.charAt(i);
+		}
+		System.out.println("Here ya go:");
+		System.out.println(mirror);
+		System.out.println("Ya welcome!");
+ }
+}
