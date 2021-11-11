@@ -1,0 +1,37 @@
+package Questions;
+
+
+public class Q6 
+{
+	// def of main
+    public static void main(String[] args)
+    {
+    	
+    	// Preset value for this function. I could've asked for user input, like a few of the first two examples, but that doesn't seem neccessary to fulfill the question requirements
+        int myInt = 17;
+        System.out.println("Number: " + myInt);
+        
+        // Here, we are calling the method that I define below.
+        checkEven(myInt);
+
+    }
+
+    // Definition of the important function, which accepts an integer as an argument. 
+    static void checkEven(int myInt)
+    {
+        //Decimals are truncated when you divide an integer by 2 in Java. This is probably the most important line of code in the entire algorithm. 
+       int n = myInt/2;
+       int answer = n*2;
+
+       //If the original number was truncated, then we've changed it by dividing by two then multiplying by two. 
+       //If the original number wasn't truncated, we've changed nothing. Pretty clever, huh?
+       if (myInt == answer)
+       {
+           System.out.println("Even");
+       }
+       else
+       {
+           System.out.println("NotEven");
+       }
+    }
+}
