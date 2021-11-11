@@ -1,0 +1,35 @@
+package Questions;
+
+public class Q5 
+{
+	// def of main, accepts an array of strings as an argument. 
+    public static void main(String[] args)
+    {
+    	
+    	// In the main method, we call the SubString method with the sample string "Come and get them."
+    	String ans = SubString(5, "Come and get them.");
+    	
+    	System.out.println("The answer is: " + ans);
+
+    }
+
+    // Definition of SubString method, which accepts and int and a string as arguments. 
+   static String SubString(int idx, String str)
+   {
+	   // prelim definitions
+	   int i;
+	   String dummy = ""; 
+	   
+	   // for loop to iterate to the idx provided
+	   for (i = 0; i <= idx; i++)
+	   {
+		   // Very simply, we add the character at the "i-th" position in the provided string to the empty 'dummy' string
+		   dummy += str.charAt(i);
+		   
+	   }
+	   
+	   return dummy;
+	   
+    }
+
+}
