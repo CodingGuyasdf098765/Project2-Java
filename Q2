@@ -1,0 +1,26 @@
+package Questions;
+
+public class Q2
+{
+	// Definition of the main method for the Q2 Class
+	  public static void main(String[] args)
+	  {
+		  
+		// Definition of preliminary variables. 
+	    int k = 7, firstEntry = 0, secondEntry = 1;
+	        
+	    System.out.println("Here are the first " + k + " numbers in the Fibonacci sequence: ");
+	    
+	    // I think a for loop also would've worked here, but the while loop just made more sense to me. 
+	    while (firstEntry <= k +1 ) 
+	    {
+	      System.out.println(firstEntry);
+	      
+	      // This is the "meat" of the entire algorithm, where we set the next entry to the sum of the preceding two, then change the values of those entries to the appropriate value. 
+	      int nextEntry = firstEntry + secondEntry;
+	      firstEntry = secondEntry;
+	      secondEntry = nextEntry;
+
+	    }
+	  }
+	}
