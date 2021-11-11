@@ -1,0 +1,69 @@
+package Questions;
+
+public class Q1 
+{
+
+	// Definition of the Main method
+    public static void main(String[] args) 
+    {
+
+        int[] Array1 = { 1,0,5,6,3,2,3,7,9,8,4};
+
+        System.out.println("This array:");
+        printArray(Array1);
+
+        System.out.println("Will be Sorted into this:");
+        
+        // Calling the bubble sort method
+        BubbleSort(Array1);
+
+        // Printing to console the newly sorted array
+        printArray(Array1);
+        
+        System.out.println("Hooray!");
+    }
+    
+    //Definition of the "Main" method for this question, the bubble sort. 
+   static void BubbleSort(int Array1[])
+   {
+
+        //length of array
+        int arrayLength = Array1.length;
+
+        //Basic for loop that iterates across the length of the array . 
+        for (int i = 0; i < arrayLength -1; i++) 
+        {
+        	//Nested for loop. Not nearly as complicated as it sounds. Good thing I remember the little bit of Intro to CompSci from Freshman year. 
+            for (int j = 0; j < arrayLength - i - 1; j++) 
+            {
+                //if statement that checks which value of the array is larger, then appropriately switches them. 
+                if (Array1[j] > Array1[j + 1]) {
+
+                    //dummy variable
+                    int dummy = Array1[j];
+                    //set the second to the first position
+                    Array1[j] = Array1[j + 1];
+                    //set the dummy variable to the next position
+                    Array1[j + 1] = dummy;
+                }
+            }
+        }
+    }
+
+   	// Definition of the "printArray" method, which does exactly what it sounds like it might do. 
+    static void printArray(int Array1[])
+    {
+        //get array length
+        int n = Array1.length;
+        
+        //for loop that outputs the value of the array at the "i-th" position, then adds a space afterwards. 
+        for (int i = 0; i < n; ++i) 
+        {
+            System.out.print(Array1[i] + " ");
+        }
+        System.out.println("");
+    }
+    
+    
+    
+}
