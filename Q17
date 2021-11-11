@@ -1,0 +1,52 @@
+package Questions;
+
+import java.util.Scanner;
+
+public class Q17 
+{
+	
+	public static void main(String[] args)
+	{
+		
+		System.out.println("Hello World! 17 ");
+		
+		CalculateInterest();
+		
+	}
+
+	public static float CalculateInterest() 
+	{
+		// Initial declaration of variables
+		float principal, rate;
+		int years;
+		
+		// Get inputs from the user
+		while (true) 
+		{
+			try 
+			{
+				Scanner scanner = new Scanner(System.in);
+				
+				System.out.print("Please enter your current pincipal: ");
+				principal = scanner.nextFloat();
+				
+				System.out.print("Please enter your rate (%):");
+				rate = scanner.nextFloat();
+				
+				System.out.print("Please enter the length of your loan in years: ");
+				years = scanner.nextInt();
+				
+				break;
+			} 
+			catch (Exception e) 
+			{
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		float interest = principal * rate * years;
+		System.out.println("Your interest is " + interest);
+		
+		return interest;
+	}
+}
