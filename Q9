@@ -1,0 +1,74 @@
+package Questions;
+
+//Import statements are something I certainly need to learn more about because they confuse me quite a bit. 
+import java.util.ArrayList;
+
+public class Q9 
+{
+
+    public static void main(String[] args) 
+    {
+    	
+    	// Three different ArrayLists are declared here. 
+        ArrayList<Integer> myList = new ArrayList<Integer>();
+        ArrayList<Integer> myPrimes = new ArrayList<Integer>();
+        ArrayList<Integer> notPrimes = new ArrayList<Integer>();
+        
+        // for loop to iterate from 1 to 100
+        for (int i = 1; i <= 100; i++) 
+        {
+            myList.add(i);
+        }
+
+        //System.out.println(myList);
+
+        for (int primes : myList) 
+        {
+
+            //boolean to check if it is a prime. Here we call the isPrimes() method defined below
+            boolean boolPrime = isPrime(primes);
+
+            //if it is a prime
+            if (boolPrime) 
+            {
+                //adds the num word to the prime Arraylist
+            //System.out.println("prime: "+primes);
+                myPrimes.add(primes);
+            } else {
+                //adds the non to the prime ArrayList
+            //System.out.println("Not: "+primes);
+                notPrimes.add(primes);
+            }
+        }
+
+        //print out the list to the console
+        System.out.println("List of non-prime integers: ");
+        System.out.println(notPrimes);
+
+        System.out.println("List of Prime numbers: ");
+        System.out.print(myPrimes);
+
+    }
+
+
+    public static boolean isPrime(int value) 
+    {
+
+        // Making use here of the "or" operator(?), namely the use of the double lines "||", which in boolean logic means "this OR that". If either statement is true, the whole thing returns false. Otherwise, it returns true. 
+        if(value == 1 || value == 0) return false;
+        if(value == 2) return true;
+
+
+        //The question doesn't stipulate that we cannot use the modulo operator, so its use is appreciated here
+        if (value % 2 == 0) return false;
+
+        //if not even, the odds are checked
+        for (int i = 3; i * i <= value; i += 2) 
+        {
+            if (value % i == 0)
+                return false;
+        }
+        return true;
+
+    }
+}
