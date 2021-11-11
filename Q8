@@ -1,0 +1,61 @@
+package Questions;
+
+import java.util.ArrayList;
+
+public class Q8 
+{
+	// Placeholder main
+	public static void Main(String[] args)
+	{
+		
+		System.out.println("Hello World!"); 
+	}
+
+	// Method that returns true or false depending on our determination of the isPalindrome bool. 
+	public boolean isPalindrome(String s) 
+	{ 
+		//for loop with nested conditional statement to determine if each character about the middle character is equal
+		for (int i = 0; i < s.length() / 2; ++i) 
+		{
+			if (s.charAt(i) != s.charAt(s.length() - 1 - i))
+				return false;
+		}
+
+		return true;
+	}
+
+	public void Palindrome() 
+	{
+		
+		// Here we've got some strings that we consider as possible palindromes
+		ArrayList<String> palindromeCandidates = new ArrayList<String>();
+		palindromeCandidates.add("quaran");
+		palindromeCandidates.add("madam");
+		palindromeCandidates.add("lommy");
+		palindromeCandidates.add("civic");
+		palindromeCandidates.add("radar");
+		palindromeCandidates.add("icky");
+		palindromeCandidates.add("kayak");
+		palindromeCandidates.add("man");
+		palindromeCandidates.add("refer");
+		palindromeCandidates.add("boy");
+		palindromeCandidates.add("turin");
+		palindromeCandidates.add("hurin");
+		palindromeCandidates.add("huruh");
+		palindromeCandidates.add("did");
+
+		// The below formulation is called for-each loop. The String s is the placeholder for the String of the "current iteration"
+		ArrayList<String> palindromes = new ArrayList<String>();
+		for (String s : palindromeCandidates) 
+		{
+			if (isPalindrome(s))
+				palindromes.add(s);
+		}
+
+		for (String s : palindromeCandidates)
+			System.out.println(s + " ");
+
+		for (String s : palindromes)
+			System.out.println(s + " ");
+	}
+}
